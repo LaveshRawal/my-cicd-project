@@ -24,6 +24,12 @@ jobs:
         docker build -t my-cicd-project:latest .
         docker images
 
+    - name: Save state
+      run: echo "myState=myValue" >> $GITHUB_STATE
+
+    - name: Set output
+      run: echo "myOutput=myValue" >> $GITHUB_ENV
+
     - name: List Docker images
       run: docker images
 
